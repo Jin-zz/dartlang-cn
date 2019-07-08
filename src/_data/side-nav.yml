@@ -1,0 +1,251 @@
+- title: 样例和教程
+  expanded: false
+  children:
+    - title: 语言概览
+      permalink: /samples
+    - title: Codelabs
+      expanded: true
+      children:
+        - title: Codelabs 列表
+          urlExactMatch: true
+          match-page-url-exactly: true
+          permalink: /codelabs
+        - title: Dart 速查表实践
+          permalink: /codelabs/dart-cheatsheet
+    - title: 教程一览
+      urlExactMatch: true
+      match-page-url-exactly: true
+      permalink: /tutorials
+
+- title: Dart 开发语言
+  expanded: false
+  children:
+    - title: 概览
+      permalink: /guides/language/language-tour
+    - title: 类型体系
+      permalink: /guides/language/sound-dart
+    - title: 规范
+      permalink: /guides/language/spec
+    - title: 高效指南 (Effective Dart)
+      expanded: false
+      children:
+        - title: 概述
+          urlExactMatch: true
+          match-page-url-exactly: true
+          permalink: /guides/language/effective-dart
+        - title: 代码风格
+          permalink: /guides/language/effective-dart/style
+        - title: 文档
+          permalink: /guides/language/effective-dart/documentation
+        - title: 用法示例
+          permalink: /guides/language/effective-dart/usage
+        - title: API 设计
+          permalink: /guides/language/effective-dart/design
+
+- title: 核心库
+  expanded: false
+  children:
+    - title: 综述
+      urlExactMatch: true
+      match-page-url-exactly: true
+      permalink: /guides/libraries
+    - title: 概览
+      permalink: /guides/libraries/library-tour
+    - title: 介绍文章
+      children:
+        - title: dart:io 库介绍
+          permalink: /articles/libraries/dart-io
+        - title: 使用 stream
+          permalink: /articles/libraries/creating-streams
+
+- title: Packages
+  expanded: false
+  children:
+    - title: 如何使用 package
+      permalink: /guides/packages
+    - title: 常用 package 介绍
+      permalink: /guides/libraries/useful-libraries
+    - title: 创建 package
+      permalink: /guides/libraries/create-library-packages
+    - title: 发布 package
+      permalink: /tools/pub/publishing
+    - title: Package 参考资料
+      expanded: false
+      children:
+        - title: 依赖
+          permalink: /tools/pub/dependencies
+        - title: 术语表
+          permalink: /tools/pub/glossary
+        - title: Package 文件结构
+          permalink: /tools/pub/package-layout
+        - title: 设置环境变量
+          permalink: /tools/pub/environment-variables
+        - title: Pubspec 文件
+          permalink: /tools/pub/pubspec
+        - title: 问题排查
+          permalink: /tools/pub/troubleshoot
+        - title: 版本管理
+          permalink: /tools/pub/versioning
+
+- title: 开发文档
+  expanded: false
+  children:
+    - title: Futures 和 async-await
+      permalink: /tutorials/language/futures
+    - title: 使用 JSON
+      permalink: /guides/json
+    - title: Streams 介绍
+      permalink: /tutorials/language/streams
+    - title: 开发移动应用
+      permalink: /mobile
+    - title: 命令行和服务端应用
+      children:
+        - title: 综述
+          urlExactMatch: true
+          match-page-url-exactly: true
+          permalink: /server
+        - title: 起步教程
+          permalink: /tutorials/server/get-started
+        - title: 编写命令行应用
+          permalink: /tutorials/server/cmdline
+        - title: 编写 HTTP 客户端和服务端应用
+          permalink: /tutorials/server/httpserver
+        - title: 与 C 和 C++ 互调
+          permalink: /server/c-interop
+        - title: 库和 package
+          permalink: /server/libraries
+    - title: 网页端 (Web) 应用
+      children:
+        - title: 综述
+          urlExactMatch: true
+          match-page-url-exactly: true
+          permalink: /web
+        - title: 开始使用
+          permalink: /tutorials/web/get-started
+        - title: 动态获取数据
+          permalink: /tutorials/web/fetch-data
+        - title: 底层 Web 编程
+          children:
+          - title: Dart 与 HTML 关联
+            permalink: /tutorials/web/low-level-html/connect-dart-html
+          - title: 向 DOM 添加元素
+            permalink: /tutorials/web/low-level-html/add-elements 
+          - title: 移除 DOM 元素
+            permalink: /tutorials/web/low-level-html/remove-elements
+        - title: Web 上与 JS/TS 互调
+          permalink: /web/js-interop
+        - title: 部署
+          permalink: /web/deployment
+        - title: 常用 Web 库和 package
+          permalink: /web/libraries
+
+- title: 开发工具介绍和使用技巧
+  expanded: false
+  children:
+  - title: 综述
+    urlExactMatch: true
+    match-page-url-exactly: true
+    permalink: /tools
+  - title: 编辑器和调试工具
+    children:
+      - title: Dart 开发者工具
+        permalink: /tools/dart-devtools
+      - title: DartPad 在线运行 Dart 代码
+        permalink: /tools/dartpad
+      - title: 在 IntelliJ 和 Android Studio 编辑 Dart
+        permalink: /tools/jetbrains-plugin
+      - title: 在 VS Code 里编辑 Dart
+        permalink: /tools/vs-code
+  - title: 命令行工具
+    children:
+    - title: Dart SDK
+      expanded: true
+      children:
+        - title: 综述
+          permalink: /tools/sdk
+        - title: dart (DartVM 运行环境)
+          permalink: /tools/dart-vm
+        - title: dart2aot (以 AOT 模式运行 Dart 代码)
+          permalink: /tools/dart2aot
+        - title: dart2js (Dart 生成 JS)
+          permalink: /tools/dart2js
+        - title: dartanalyzer (Dart 静态分析)
+          permalink: /tools/dartanalyzer
+        - title: dartdevc (Dev 模式下以 JS 方式在浏览器运行)
+          permalink: /tools/dartdevc
+        - title: dartdoc (Dart API 文档生成命令)
+          permalink: /tools/dartdoc
+        - title: dartfmt (Dart 代码格式化命令)
+          permalink: /tools/dartfmt
+        - title: pub (pub 命令和工具)
+          permalink: /tools/pub/cmd
+    - title: 其他的命令行工具
+      expanded: true
+      children:
+        - title: build_runner 命令
+          permalink: /tools/build_runner
+        - title: webdev 命令
+          permalink: /tools/webdev
+  - title: 源码管理
+    children:
+      - title: 代码格式化
+        permalink: /guides/language/formatting
+      - title: 不应提交的内容
+        permalink: /guides/libraries/private-files
+  - title: 静态分析
+    children:
+      - title: 自定义静态分析
+        permalink: /guides/language/analysis-options
+      - title: 修复常见的类型问题
+        permalink: /guides/language/sound-problems
+  - title: 测试和调优
+    children:
+      - title: 测试
+        permalink: /guides/testing
+      - title: 调试 Web 应用
+        permalink: /web/debugging
+
+- title: 资源
+  expanded: false
+  children:
+    - title: 行为准则
+      permalink: /code-of-conduct
+    - title: 常见问题
+      permalink: /faq
+    - title: 历史文档
+      children:
+        - title: 迁移到 Dart&nbsp;2
+          urlExactMatch: true
+          match-page-url-exactly: true
+          permalink: /dart-2
+        - title: 将 Web 应用迁移到 Dart&nbsp;2 版本
+          permalink: /web/dart-2
+        - title: 已失效的 pub 命令
+          permalink: /tools/pub/obsolete
+
+- title: 相关站点
+  expanded: true
+  children:
+    - title: API 文档
+      permalink: https://api.dart.dev
+    - title: Dart 团队官方博客
+      permalink: https://medium.com/dartlang
+    - title: DartPad (在线编辑器)
+      permalink: https://dartpad.dartlang.org
+    - title: Flutter
+      permalink: https://flutter.cn
+    - title: Package 网站
+      permalink: https://pub.flutter-io.cn
+
+- title: 关于 Dart 中文文档站
+  expanded: false
+  children:
+    - title: 关于本站 (WIP)
+      permalink: #
+    - title: 免责条款 (Disclaimer)
+      permalink: https://flutter-io.cn/disclaimer.html
+
+# - title: Books
+#   permalink: /resources/books
+# - title: Videos
+#   permalink: /resources/videos

@@ -1,0 +1,69 @@
+language: dart
+
+cache:
+  timeout: 300
+  bundler: true
+  directories:
+  - $HOME/.pub-cache
+  - $HOME/.nvm
+  - $HOME/.rvm
+  - node_modules
+
+env:
+  global:
+    - JEKYLL_ENV=production
+    - TZ=US/Pacific # normalize build timestamp
+
+matrix:
+  include:
+    - env: TASK="bundle exec jekyll build"
+      dart: stable
+    - env: TASK="./tool/check-code.sh"
+      dart: stable
+    - env: TASK="./tool/check-code.sh"
+      dart: dev
+    - env: TASK="./tool/analyze-and-test-examples.sh"
+      dart: stable
+    - env: TASK="./tool/analyze-and-test-examples.sh"
+      dart: dev
+    - env: TASK="./tool/build-and-check-links.sh"
+      dart: stable
+  allow_failures:
+    - env: TASK="./tool/analyze-and-test-examples.sh"
+      dart: dev
+    - env: TASK="./tool/check-code.sh"
+      dart: dev
+    - env: TASK="./tool/build-and-check-links.sh"
+      dart: stable
+
+before_install:
+  - source ./tool/env-set.sh
+  - ./tool/before-install.sh
+
+install:
+  - ./tool/install.sh
+  - ./tool/shared/write-ci-info.sh -v
+
+script:
+  - $TASK
+
+after_script:
+  # Just FYI test. Won't fail the build if it has errors.
+  # - if [[ $TASK == *build* ]]; then ./deploy/check_sitemap.rb; fi
+  # - if [[ $TASK == *build* ]]; then ./deploy/html_proof.rb; fi
+  # # Checks for bad HTML, broken links, and forces build to fail if it fails.
+  # # (By default, Travis doesn't fail builds after deployment.)
+  # - "./deploy/html_proof.rb || travis_terminate 1"
+
+deploy:
+  - provider: script
+    script: ./translator/deploy.sh
+    skip_cleanup: true
+    on:
+      repo: cfug/dartlang-cn
+      branch: master
+      condition: $TASK == *build*
+
+# Only run Travis jobs for named branches (to avoid double builds for each PR)
+branches:
+  only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
